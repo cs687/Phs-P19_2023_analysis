@@ -19,7 +19,7 @@ conditions_names={'JLB259_0uM',...
                   'JLB259_11uM',...
                   'JLB259_12uM',...
                   };
-color_cond={'r','b','m'};
+color_cond={'r','b','k'};
 figure;  
 for dp=1:length(data_path)
     for cn=1:length(conditions_names)
@@ -31,12 +31,19 @@ for dp=1:length(data_path)
             hold on;
             plot(nanmean(MY,2),color_cond{dp});
         catch
-        end
-        %plotting legend for last subplot
-        if dp==length(data_path)&&cn==length(conditions_names)
-            legend({'2023-03-08','2023-03-30','2023-03-04'});
-        end
-            
+         end 
     end
 end
+
+%Making figure pretty
+for cn=1:length(conditions_names)
+    %plotting legend for last subplot
+    if cn==10
+        legend({'2023-03-08','2023-03-30','2023-03-04'});
+    end
+    subplot(6,2,cn);
+    hold on;
+    title(conditions_names{cn}(8:end));
+end
+
  
