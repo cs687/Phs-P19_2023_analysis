@@ -107,6 +107,25 @@ function push_back_Callback(hObject, eventdata, handles)
 % hObject    handle to push_back (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+%saving what was done
+if isfield(handles,'all_good_channels');
+    handles.all_good_channels=[handles.all_good_channels,handles.good_channels_now{end}];
+end
+handles=rmfield(handles,{'good_channels_now','channels_loc_now'});
+
+if isfield(handles,'all_good_channels');
+    to_save=handles.all_good_channels;
+    save([handles.data_path,'\subAuto\Data\checked_pos.mat'],'to_save');
+end
+
+%Getting Input
+handles.pos_now=handles.pos_now-1;
+
+%getting pos names
+D=dir([handles.data_path,'\subAuto\2022-03-23\B*']);
+handles.pos_names={D.name};
+loading_image(hObject,handles)
+
 
 
 

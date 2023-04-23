@@ -24,8 +24,10 @@ data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JL
 %            [data_main_path,'2023-03-30','\subAuto\Data\'],...
 %            [data_main_path,'2023-04-05','\subAuto\Data\']};
 
-data_path={[data_main_path,'2023-03-30','\subAuto\Data\'],...
-           [data_main_path,'2023-04-05','\subAuto\Data\']};
+% data_path={[data_main_path,'2023-03-30','\subAuto\Data\'],...
+%            [data_main_path,'2023-04-05','\subAuto\Data\']};
+
+data_path={[data_main_path,'2023-03-30','\subAuto\Data\']};
 
 %Default parameters
 % numlags=500;
@@ -191,4 +193,4 @@ figure;
  errorbar([iptg;iptg;iptg;iptg]',nanmean(class_cell,3)',nanstd(class_cell,0,3)');
  xlabel('IPTG (uM)');
  ylabel('Fraction (au)');
- legend({'OFF','Pulsing','Oscillation'
+ legend({'OFF','Pulsing','Oscillation','ON'});

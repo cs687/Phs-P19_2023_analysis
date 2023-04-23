@@ -27,7 +27,7 @@ data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JL
 % data_path={[data_main_path,'2023-03-30','\subAuto\Data\'],...
 %            [data_main_path,'2023-04-05','\subAuto\Data\']};
 
-data_path={[data_main_path,'2023-03-30','\subAuto\Data\']};
+%data_path={[data_main_path,'2023-04-05','\subAuto\Data\']};
 
 %Default parameters
 % numlags=500;
@@ -37,8 +37,8 @@ plot_now=2;
 do_plot=0;
 plot_color=1;
 do_auto=0;
-%L=576;
-L=721;
+L=576;
+%L=721;
 % L=613;
 %L=757;
 lag=1;
@@ -134,7 +134,7 @@ for tt=1:length(data_path)
 
                 %elseif freq(loc2(1))>1/(5000/8); %oscillation case: green
 
-                if sum((m-p)>1500)~=0% on case: magenta
+                if sum((m-p)>2000)~=0% on case: magenta
                     color_now=on_colors_all{4};
                     class_cell(4,kk,tt)=class_cell(4,kk,tt)+1;
                 elseif sum(loc2>1)>0 && sum(freq(loc2)>10^-3)>0

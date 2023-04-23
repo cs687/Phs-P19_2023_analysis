@@ -1,4 +1,4 @@
-function [class_cell,class_cell_num]=Classifing_on_new_data_Phs_P19_data_2023_04_17_v1;
+function [class_cell,class_cell_num]=Classifing_on_new_data_Phs_P19_data_maybe_better_2023_04_17_v1;
 %function [class_cell,class_cell_num]=Classifing_on_new_data_Phs_P19_data_2023_04_17_v1(data_path,varargin);
 % This function classifies the experimental data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +27,8 @@ data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JL
 % data_path={[data_main_path,'2023-03-30','\subAuto\Data\'],...
 %            [data_main_path,'2023-04-05','\subAuto\Data\']};
 
-data_path={[data_main_path,'2023-03-30','\subAuto\Data\']};
+%data_path={[data_main_path,'2023-03-30','\subAuto\Data\']};
+data_path={[data_main_path,'2023-04-14','\subAuto\Data\']};
 
 %Default parameters
 % numlags=500;
@@ -37,8 +38,8 @@ plot_now=2;
 do_plot=0;
 plot_color=1;
 do_auto=0;
-%L=576;
-L=721;
+L=576;
+%L=721;
 % L=613;
 %L=757;
 lag=1;
@@ -134,10 +135,10 @@ for tt=1:length(data_path)
 
                 %elseif freq(loc2(1))>1/(5000/8); %oscillation case: green
 
-                if sum((m-p)>1500)~=0% on case: magenta
+                if sum((m-p)>2000)~=0% on case: magenta
                     color_now=on_colors_all{4};
                     class_cell(4,kk,tt)=class_cell(4,kk,tt)+1;
-                elseif sum(loc2>1)>0 && sum(freq(loc2)>10^-3)>0
+                elseif sum(loc2>1)>0 && sum(freq(loc2)>(2.5*10^-3))>0
                 %elseif sum(loc_af>bounds(1))>2 && sum(freq(loc2)>10^-3)>0;
                     color_now=on_colors_all{3};
                     class_cell(3,kk,tt)=class_cell(3,kk,tt)+1;

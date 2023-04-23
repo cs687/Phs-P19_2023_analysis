@@ -26,10 +26,11 @@ for dp=1:length(data_path)
 % for dp=1
 %     for cn=5:12
          try load([data_path{dp},'\subAuto\Data\',conditions_names{cn},'.mat'],'MY');
-            load([data_path{dp},'\subAuto\Data\',conditions_names{cn},'.mat'],'MY');
+%            load([data_path{dp},'\subAuto\Data\',conditions_names{cn},'.mat'],'MY');
             subplot(6,2,cn);
             hold on;
-            plot(nanmean(MY,2),color_cond{dp});
+            plot(nanmean(MY,2),color_cond{dp},'Linewidth',2);
+            
         catch
          end 
     end
@@ -44,6 +45,10 @@ for cn=1:length(conditions_names)
     subplot(6,2,cn);
     hold on;
     title(conditions_names{cn}(8:end));
+    box on;
+    xlabel('Frames');
+    ylabel('MY');
+    set(gca, 'Linewidth',2,'FontWeight','bold')
 end
 
  

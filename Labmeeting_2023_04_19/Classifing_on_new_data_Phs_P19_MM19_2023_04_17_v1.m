@@ -19,7 +19,7 @@ function [class_cell,class_cell_num]=Classifing_on_new_data_Phs_P19_data_2023_04
 
 %figure;
 %for i=2:length(to_do);
-data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JLB259\';
+%data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JLB259\';
 % data_path={[data_main_path,'2023-03-08','\subAuto\Data\'],...
 %            [data_main_path,'2023-03-30','\subAuto\Data\'],...
 %            [data_main_path,'2023-04-05','\subAuto\Data\']};
@@ -27,7 +27,7 @@ data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JL
 % data_path={[data_main_path,'2023-03-30','\subAuto\Data\'],...
 %            [data_main_path,'2023-04-05','\subAuto\Data\']};
 
-data_path={[data_main_path,'2023-03-30','\subAuto\Data\']};
+data_path={['\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\not_so_go_oscillations\2022-06-29\subAuto\Data\']};
 
 %Default parameters
 % numlags=500;
@@ -37,13 +37,13 @@ plot_now=2;
 do_plot=0;
 plot_color=1;
 do_auto=0;
-%L=576;
-L=721;
+L=576;
+%L=721;
 % L=613;
 %L=757;
 lag=1;
-name={'0 uM IPTG','2uM IPTG','3uM IPTG','4uM IPTG','5 uM IPTG','6 uM IPTG','7 uM IPTG','8 uM IPTG','9 uM IPTG','10 uM IPTG'};
-iptg=[0,2,3,4,5,6,7,8,9,10];
+name={'0 uM IPTG','2uM IPTG','3uM IPTG','4uM IPTG','5 uM IPTG','6 uM IPTG','7 uM IPTG','8 uM IPTG'};
+iptg=[0,2,3,4,5,6,7,8];
 on_colors_all={'w','y','g','c'};
 class_cell=zeros(4,length(iptg),length(data_path));
 class_cell_num={};
