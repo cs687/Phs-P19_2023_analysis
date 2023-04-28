@@ -4,8 +4,9 @@ data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JL
 %            [data_main_path,'2023-03-30'],...
 %            [data_main_path,'2023-04-05']};
 
-data_path={[data_main_path,'2023-03-08']};
+%data_path={[data_main_path,'2023-03-08']};
 %data_path={[data_main_path,'2023-04-05']};
+data_path={[data_main_path,'2023-04-21']};
 
 conditions_names={'JLB259_0uM',...
                   'JLB259_2uM',...
@@ -52,10 +53,31 @@ for dp=1:length(data_path)
                 ind=ind+1;
             end
             sgtitle(strrep(conditions_names{cn},'_',' '));
+            import mlreportgen.ppt.*
+            in_path='C:\Users\christian.schwall\OneDrive - University Of Cambridge\Labmeeting\Update';
+            
+            slidesFile = [in_path,'\test.pptx'];
+            slides = Presentation(slidesFile);
+            contentSlide = add(slides,'Title and Content');
+            set(gcf,'units','normalized','outerposition',[0 0 1 1])
+            saveas(gcf,[in_path,'\test.png']);
+            Picture([in_path,'\test.png']);
+            pic=Picture([in_path,'\test.png']);
+            pic.X='0';
+            pic.Y='0';
+            %pic.Width='80cm';
+            %pic.Height='60cm';
+            replace(slides,'Content',pic);
+
             
         catch
          end 
     end
+end
+
+close(slides);
+if ispc
+    winopen(slidesFile);
 end
 
 % %Making figure pretty

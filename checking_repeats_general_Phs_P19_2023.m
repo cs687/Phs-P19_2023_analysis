@@ -1,6 +1,6 @@
 function checking_repeats_general_Phs_P19_2023(what);
 %Function to compare the mean expression of the repeats
-repeat_name={'2023-03-08','2023-03-30','2023-04-05','2023-04-14'};
+repeat_name={'2023-03-08','2023-03-30','2023-04-05','2023-04-14','2023-04-21'};
 
 data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JLB259\';
 

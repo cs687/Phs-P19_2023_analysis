@@ -5,7 +5,7 @@ data_main_path='\\slcu.cam.ac.uk\data\Microscopy\TeamJL\Chris\movies\paulsson_JL
 %            [data_main_path,'2023-04-05']};
 
 %data_path={[data_main_path,'2023-03-30']};
-data_path={[data_main_path,'2023-04-05']};
+data_path={[data_main_path,'2023-04-14']};
 
 conditions_names={'JLB259_0uM',...
                   'JLB259_2uM',...
